@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <title>My Restaurants</title>
+        <h1>Restaurants</h1>
+        {# https://jinja.palletsprojects.com/en/2.9.x/templates/ #}
+        {% for r in restaurantx %}
+            <p>Restaurant Name: {{r.name}}</p>
+            {#
+            <a href={{ url_for('editRestaurant', 
+            restaurant = restaurant) }}>Edit</a>
+            #}
+            <a href={{ url_for('editRestaurant', 
+            restid = loop.index0, restname = r.name) }}>Edit</a>
+            {# Note that loop.index starts with 1, and loop.index0 starts with 0 (See: For) #}
+            <br>
+        {% endfor %}
+    </body>
+</html>
