@@ -11,7 +11,9 @@
             #}
             <a href={{ url_for('editRestaurant', 
             restid = loop.index0, restname = r.name) }}>Edit</a>
-            {# Note that loop.index starts with 1, and loop.index0 starts with 0 (See: For) #}
+            {# Note that loop.index starts with 1, and loop.index0 starts with 0 
+                See: For - https://jinja.palletsprojects.com/en/2.9.x/templates/#for-loop
+            #}
             <br>
         {% endfor %}
     </body>

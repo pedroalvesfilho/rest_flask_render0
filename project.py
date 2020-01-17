@@ -18,10 +18,10 @@ app = Flask(__name__)
 """
 
 # Fake restaurants
-restaurants = [
-    {'name': 'The CRUDdy Crab'},    # 'id': '0'
-    {'name': 'Blue Burger'},        # 'id': '1'
-    {'name': 'Taco Hut'}            # 'id': '3'
+restaurants = [                     # Start a list `[...]` with dictionaries `{...}` inside
+    {'name': 'The CRUDdy Crab'},    # 'index': '0'
+    {'name': 'Blue Burger'},        # 'index': '1'
+    {'name': 'Taco Hut'}            # 'index': '3'
 ]
 
 # >>> print(restaurants)
@@ -38,13 +38,13 @@ restaurants = [
 # Fake Menu Items
 items = [ 
 {'name': 'Cheese Pizza', 'description': 'made with fresh cheese',
-          'price': '$5.59', 'course': 'Entree'},    # , 'id': '0'
+          'price': '$5.59', 'course': 'Entree'},    # 'index': '0'
 {'name': 'Cheese Pizza2', 'description': 'made with fresh cheese2',
-          'price': '$6.59', 'course': 'Entree2'},    # , 'id': '1'
+          'price': '$6.59', 'course': 'Entree2'},    # 'index': '1'
 {'name': 'Cheese Pizza3', 'description': 'made with fresh cheese3',
-          'price': '$7.59', 'course': 'Entree3'},    # , 'id': '2'
+          'price': '$7.59', 'course': 'Entree3'},    # 'index': '2'
 {'name': 'Cheese Pizza4', 'description': 'made with fresh cheese4',
-          'price': '$8.59', 'course': 'Entree4'},    # , 'id': '3'
+          'price': '$8.59', 'course': 'Entree4'},    # 'index': '3'
            ]
 
 @app.route('/restaurant/')
@@ -55,7 +55,7 @@ def showRestaurant():
 
 @app.route('/restaurant/<int:restid>/edit/<string:restname>', methods=['GET','POST'])
 def editRestaurant(restid, restname):
-    # EDIT RESTAURANT HOMEPAGE
+    # EDIT RESTAURANT
     # https://hackersandslackers.com/flask-routes/
     if request.method == 'POST':
         restname = request.form.get('name')
